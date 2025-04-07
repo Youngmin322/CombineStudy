@@ -19,10 +19,37 @@ class SignUpFormViewModel: ObservableObject {
     @Published var passwordMessage: String = ""
     @Published var isValid: Bool = false
     
+    var authenticationService = AuthenticationService()
+    
     // 유저이름 유효성 검사 (3자 이상)
     private lazy var isUsernameLengthValidPublisher: AnyPublisher<Bool, Never> = {
         $username
             .map { $0.count >= 3 }
+            .eraseToAnyPublisher()
+    }()
+    
+    private lazy var isUsernameAvaliablePublisher: AnyPublisher<Bool, Never> = {
+        $username
+            .debounce(for: 0.8, scheduler: DispatchQueue.main)
+            .removeDuplicates()
+            .compactMap { username -> String? in
+                // 유저 이름이 비어있으면 nil을 반환
+                if username.isEmpty {
+                    return nil
+                }
+                return username
+            }
+            .flatMap { username -> AnyPublisher<Bool, Never> in
+                return self.authenticationService.checkUserNameAvailableNaive(userName: username)
+            }
+            .receive(on: DispatchQueue.main)
+            .share()
+            .eraseToAnyPublisher()
+    }()
+    
+    private lazy var isUsernameValidPublisher: AnyPublisher<Bool, Never> = {
+        Publishers.CombineLatest(isUsernameLengthValidPublisher, isUsernameAvaliablePublisher)
+            .map { $0 && $1 }
             .eraseToAnyPublisher()
     }()
     
@@ -52,20 +79,36 @@ class SignUpFormViewModel: ObservableObject {
     }()
     
     private lazy var isFormValidPublisher: AnyPublisher<Bool, Never> = {
-        Publishers.CombineLatest(isUsernameLengthValidPublisher, isPasswordValidPublisher)
+        Publishers.CombineLatest(isUsernameValidPublisher, isPasswordValidPublisher)
             .map { $0 && $1 }
             .eraseToAnyPublisher()
     }()
     
     init() {
         // 유저 이름 유효성 검사
-        isUsernameLengthValidPublisher
-            .map { $0 ? "" : "사용자 이름은 3자 이상이어야 합니다." }
+        Publishers.CombineLatest(isUsernameLengthValidPublisher, isUsernameAvaliablePublisher)
+            .map { isLengthValid, isAvailable in
+                if !isLengthValid {
+                    return "사용자 이름은 3자 이상이어야 합니다."
+                } else if !isAvailable {
+                    return "사용자 이름이 이미 사용중입니다."
+                } else {
+                    return ""
+                }
+            }
             .assign(to: &$usernameMessage)
         
         // 비밀번호 유효성 검사
-        isPasswordValidPublisher
-            .map { $0 ? "" : "비밀번호가 비어있거나 일치하지 않습니다." }
+        Publishers.CombineLatest(isPasswordEmptyPublisher, isPasswordMatchingPublisher)
+            .map { isEmpty, isMatching in
+                if isEmpty {
+                    return "비밀번호를 입력하세요."
+                } else if !isMatching {
+                    return "비밀번호가 일치하지 않습니다."
+                } else {
+                    return ""
+                }
+            }
             .assign(to: &$passwordMessage)
         
         // 폼 유효성 검사
