@@ -3,7 +3,7 @@ import json
 from urllib.parse import urlparse, parse_qs
 
 # 사용 불가능한 사용자 이름 목록
-unavailable_usernames = ['jmbae', 'johnnyappleseed', 'page', 'johndoe']
+unavailable_usernames = ['ymcho', 'johnnyappleseed', 'page', 'johndoe']
 
 class UserNameHandler(BaseHTTPRequestHandler):
     def do_GET(self):

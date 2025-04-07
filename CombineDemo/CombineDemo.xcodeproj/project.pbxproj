@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 90;
 	objects = {
 
 /* Begin PBXFileReference section */
@@ -21,10 +21,8 @@
 /* Begin PBXFrameworksBuildPhase section */
 		54B31ECE2DA35572007C75CC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -58,14 +56,10 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			fileSystemSynchronizedGroups = (
 				54B31ED32DA35572007C75CC /* CombineDemo */,
 			);
 			name = CombineDemo;
-			packageProductDependencies = (
-			);
 			productName = CombineDemo;
 			productReference = 54B31ED12DA35572007C75CC /* CombineDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -94,7 +88,7 @@
 			);
 			mainGroup = 54B31EC82DA35572007C75CC;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
+			preferredProjectObjectVersion = 90;
 			productRefGroup = 54B31ED22DA35572007C75CC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -107,25 +101,21 @@
 /* Begin PBXResourcesBuildPhase section */
 		54B31ECF2DA35572007C75CC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		54B31ECD2DA35572007C75CC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		54B31EDA2DA35573007C75CC /* Debug */ = {
+		54B31EDA2DA35573007C75CC /* Debug configuration for PBXProject "CombineDemo" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -189,7 +179,7 @@
 			};
 			name = Debug;
 		};
-		54B31EDB2DA35573007C75CC /* Release */ = {
+		54B31EDB2DA35573007C75CC /* Release configuration for PBXProject "CombineDemo" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -246,7 +236,7 @@
 			};
 			name = Release;
 		};
-		54B31EDD2DA35573007C75CC /* Debug */ = {
+		54B31EDD2DA35573007C75CC /* Debug configuration for PBXNativeTarget "CombineDemo" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -269,12 +259,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.youngmin.CombineDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		54B31EDE2DA35573007C75CC /* Release */ = {
+		54B31EDE2DA35573007C75CC /* Release configuration for PBXNativeTarget "CombineDemo" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -297,7 +287,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.youngmin.CombineDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -308,19 +298,17 @@
 		54B31ECC2DA35572007C75CC /* Build configuration list for PBXProject "CombineDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				54B31EDA2DA35573007C75CC /* Debug */,
-				54B31EDB2DA35573007C75CC /* Release */,
+				54B31EDA2DA35573007C75CC /* Debug configuration for PBXProject "CombineDemo" */,
+				54B31EDB2DA35573007C75CC /* Release configuration for PBXProject "CombineDemo" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		54B31EDC2DA35573007C75CC /* Build configuration list for PBXNativeTarget "CombineDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				54B31EDD2DA35573007C75CC /* Debug */,
-				54B31EDE2DA35573007C75CC /* Release */,
+				54B31EDD2DA35573007C75CC /* Debug configuration for PBXNativeTarget "CombineDemo" */,
+				54B31EDE2DA35573007C75CC /* Release configuration for PBXNativeTarget "CombineDemo" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
