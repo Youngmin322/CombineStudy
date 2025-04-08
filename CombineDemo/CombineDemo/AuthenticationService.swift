@@ -114,6 +114,7 @@ actor AuthenticationService {
                     return Fail(error: error).eraseToAnyPublisher()
                 }
             }
+            .retry()
             .eraseToAnyPublisher()
     }
 }
