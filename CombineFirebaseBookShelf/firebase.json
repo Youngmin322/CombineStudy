@@ -1,0 +1,12 @@
+{
+  "emulators": {
+    "singleProjectMode": true,
+    "apphosting": {
+      "port": 5002,
+      "rootDirectory": "./"
+    },
+    "ui": {
+      "enabled": true
+    }
+  }
+}

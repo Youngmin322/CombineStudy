@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		542B7F322DA5FB1300961059 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 542B7F312DA5FB1300961059 /* FirebaseAnalytics */; };
+		542B7F372DA600FE00961059 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 542B7F362DA600FE00961059 /* FirebaseFirestore */; };
+		542B7F392DA6010600961059 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 542B7F382DA6010600961059 /* FirebaseAuth */; };
+		542B7F3B2DA6010C00961059 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 542B7F3A2DA6010C00961059 /* FirebaseCore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				542B7F322DA5FB1300961059 /* FirebaseAnalytics in Frameworks */,
+				542B7F392DA6010600961059 /* FirebaseAuth in Frameworks */,
+				542B7F3B2DA6010C00961059 /* FirebaseCore in Frameworks */,
+				542B7F372DA600FE00961059 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +44,7 @@
 			isa = PBXGroup;
 			children = (
 				542B7F242DA5F94100961059 /* CombineFirebaseBookShelf */,
+				542B7F352DA600FE00961059 /* Frameworks */,
 				542B7F232DA5F94100961059 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,6 +55,13 @@
 				542B7F222DA5F94100961059 /* CombineFirebaseBookShelf.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		542B7F352DA600FE00961059 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,6 +85,9 @@
 			name = CombineFirebaseBookShelf;
 			packageProductDependencies = (
 				542B7F312DA5FB1300961059 /* FirebaseAnalytics */,
+				542B7F362DA600FE00961059 /* FirebaseFirestore */,
+				542B7F382DA6010600961059 /* FirebaseAuth */,
+				542B7F3A2DA6010C00961059 /* FirebaseCore */,
 			);
 			productName = CombineFirebaseBookShelf;
 			productReference = 542B7F222DA5F94100961059 /* CombineFirebaseBookShelf.app */;
@@ -275,7 +292,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kr.co.youngmin.CombineFirebaseBookShelf;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.codegrove.CombineFirebaseBookShelfcym;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -303,7 +320,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kr.co.youngmin.CombineFirebaseBookShelf;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.codegrove.CombineFirebaseBookShelfcym;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -350,6 +367,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 542B7F302DA5FB1300961059 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
+		};
+		542B7F362DA600FE00961059 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 542B7F302DA5FB1300961059 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		542B7F382DA6010600961059 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 542B7F302DA5FB1300961059 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		542B7F3A2DA6010C00961059 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 542B7F302DA5FB1300961059 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
