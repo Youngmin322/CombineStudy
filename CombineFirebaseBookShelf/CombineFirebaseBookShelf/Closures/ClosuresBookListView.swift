@@ -1,5 +1,5 @@
 //
-//  OnDemandBookListViewWithClosures.swift
+//  OnDemandBookDetailsViewWithClosures.swift
 //  CombineFirebaseBookShelf
 //
 //  Created by 조영민 on 4/9/25.
@@ -45,7 +45,7 @@ private class BookListViewModel: ObservableObject {
     
 }
 
-struct OnDemandBookListViewWithClosures: View {
+struct ClosuresBookListView: View {
     @StateObject private var viewModel = BookListViewModel()
     
     var body: some View {

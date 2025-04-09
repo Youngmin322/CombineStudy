@@ -1,5 +1,5 @@
 //
-//  LiveBooksListViewWithClosures.swift
+//  OnDemandBookListViewWithClosures.swift
 //  CombineFirebaseBookShelf
 //
 //  Created by 조영민 on 4/9/25.
